@@ -27,10 +27,10 @@
 
 __global__ void testKernel(int val)
 {
-    printf("[%d, %d]:\t\tValue is:%d\n",\
+    printf("[%d, %d]:\t\tValue is:%d\n gridDim.x = %d  blockDim.x = %d  blockDim.y = %d  blockIdx.x = %d  blockIdx.y = %d  \n threadIdx.x = %d threadIdx.y = %d threadIdx.z = %d\n",\
             blockIdx.y*gridDim.x+blockIdx.x,\
             threadIdx.z*blockDim.x*blockDim.y+threadIdx.y*blockDim.x+threadIdx.x,\
-            val);
+            val,gridDim.x, blockDim.x, blockDim.y, blockIdx.x, blockIdx.y,  threadIdx.x, threadIdx.y, threadIdx.z);
 }
 
 int main(int argc, char **argv)
